@@ -33,7 +33,6 @@ def describe_area():
     starting_area = """
     You find yourself in a dark forest...
     You see two paths ahead:
-    A faint path lies ahead, leading deeper into the unknown...
     """
     print(starting_area)
 
