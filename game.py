@@ -57,7 +57,9 @@ while True:
     # Ask the player for their first decision
     decision = input("\t1. Take the left path into the dark woods\n"
                     "\t2. Take the right path to the mountain pass\n"
-                    "\t3. Stay where you are\n"
+                    "\t3. Go into a near by Cave\n"
+                    "\t4. Explore the Hidden Valley\n"
+                    "\t5. Stay where you are\n"
                     "\t Type 'i' to view your inventory ").lower()
 
 
@@ -73,8 +75,29 @@ while True:
         add_to_inventory("map", player1)
         player1.has_map = True
     elif decision == "3":
+        if player1.has_lantern == True:
+            print("You go into the dark Cave.")
+            add_to_inventory("Treasure", player1)
+        else:
+            print("It is too dark in the Cave. Try to find something to illuminate your way.")
+    elif decision == "4":
+        if player1.has_map:
+            print("You go into the Hidden Valley with a bowl of salad.")
+            add_to_inventory("Rare Herbs", player1)
+        else:
+            print("You can't find the valley without a map.")
+    elif decision == "5":
         print("Confused, you stand still, unsure of what to do.")
     elif decision == "i":
         print(player1.inventory)
     else:
         print("That is not a valid choice")
+
+
+
+
+# TODO: After picking up new items, confirm to the player they got it
+# TODO: Save your changes (Ctrl+S or Command+S)
+# TODO: Commit with a message like:
+#       REF unlock new areas based on inventory items
+# TODO: Push your commits to GitHub
